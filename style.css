@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+     background-color: black; 
+}
+.banner{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+    
+}
+.banner h1{
+    color: #91130f;
+    font-family: 'Ubuntu',sans-serif;
+    font-size: 120px;
+    margin-bottom: 100px;
+    border-top: 5px solid #91130f;
+    border-bottom: 5px solid #91130f;
+   
+}
+
+.banner::after{
+    content: '';
+    width:250% ;
+    height: 100%;
+    background: linear-gradient(to right,transparent,black,black);
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: bannerAnim 3s linear forwards;
+
+}
+@keyframes bannerAnim{
+    0%{
+        right: 0%;
+    }
+    100%{
+        right: -250%;
+    }
+    
+}
+.banner button{
+    width: 240px;
+    padding: 15px;
+    background: linear-gradient(to right,#440402,#c0120c);
+    border-radius: 100px;
+    font-family: 'Dosis',sans-serif;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    transform: perspective(500px) rotateY(-15deg);
+    text-shadow: 6px 3px 2px rgba(0, 0,0, .8);
+    cursor: pointer;
+    animation: btnAnim 1s 2.5s backwards;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+@keyframes btnAnim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+          opacity: 1;
+    }
+}
+.banner button:hover{
+    transform: perspective(500px) rotateY(15deg);
+    background: linear-gradient(to right,#c0120c,#440402);
+    text-shadow: -6px 3px 2px rgba(0, 0,0, .8);
+   
+
+
+
+}
+.banner button:hover::before{
+    left: 100%;
+}
+.banner button::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,transparent,white,transparent);
+    position: absolute;
+    top: 0;
+    left:-100%;
+    transform: skewX(-30deg);
+    transition: left 0.5s ;
+    
+}
+.slideshow-wrapper{
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+.slide-show{
+    display: flex;
+    width: 400%;
+    height: 100%;
+    position: relative;
+  
+}
+@keyframes slideShow{
+    0%{ left: 0;}
+    10%{ left:0;}
+    15%{ left:-100%;}
+    25%{ left:-100%;}
+    30%{ left:-200%;}
+    35%{ left:-200%;}
+    40%{ left:-300%;}
+    50%{ left:-300%;}
+    55%{ left:-200%;}
+    65%{ left:-200%;}
+    70%{ left:-100%;}
+    80%{ left:-100%;}
+    90%{ left:0;}
+   
+}
+
+.slide:nth-child(1){
+width: 100%;
+height: 100vh;
+background: linear-gradient(100deg,rgba(38,38,38,1),rgba(38,38,38,0.8),transparent),url(./images/london.jpeg) center no-repeat;
+background-size:cover ;
+
+}
+.slide:nth-child(2){
+width: 100%;
+height: 100vh;
+background: linear-gradient(100deg,rgba(38,38,38,1),rgba(38,38,38,.8),transparent),url(./images/new-york.jpeg) center no-repeat;
+background-size:cover ;
+}
+.slide:nth-child(3){
+width: 100%;
+height: 100vh;
+background: linear-gradient(100deg,rgba(38,38,38,1),rgba(38,38,38,.8),transparent),url(./images/rome.jpg) center no-repeat;
+background-size:cover ;
+}
+.slide:nth-child(4){
+width: 100%;
+height: 100vh;
+background: linear-gradient(100deg,rgba(38,38,38,1),rgba(38,38,38,.8),transparent),url(./images/tokyo.jpg) center no-repeat;
+background-size:cover ;
+}
+.content{
+    width: 500px;
+   position: relative;
+   top:35%;
+   left: 5%;
+
+}
+.content h3{
+    font-size: 80px;
+    font-family: 'Oswald',sans-serif;
+    font-weight: 400;
+    color: white ;
+}
+.content p{
+    font-family: 'Dosis',sans-serif;
+    font-size: 20px;
+    color: #ccc;
+}
+.content button{
+    width: 130px;
+    padding: 10px 10px 0 0;
+    font-size: 20px;
+    font-family: 'Oswald',sans-serif;
+    background: transparent;
+    outline: none;
+    border: none;
+    margin-top:30px ;
+    color: white;
+    border-bottom: 1.5px solid white;
+    letter-spacing: 1px;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+.fas fa-arrow-right{
+    margin-left: 8px;
+}
